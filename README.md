@@ -102,7 +102,7 @@ HTML + CSS + JavaScript
 Recommended project organization for a local XAMPP setup:
 
 ```text
-C:\face_project
+C:\xampp\htdocs\smart_intruder_system\face_detect
 │
 ├── .venv
 ├── detect.py
@@ -118,7 +118,7 @@ C:\face_project
 ```
 
 ```text
-C:\xampp\htdocs\smart_intruder_api
+C:\xampp\htdocs\smart_intruder_system\php
 │
 ├── create_tables.sql
 ├── db_connect.php
@@ -132,7 +132,7 @@ C:\xampp\htdocs\smart_intruder_api
 ```
 
 ```text
-C:\xampp\htdocs\smart_intruder_dashboard
+C:\xampp\htdocs\smart_intruder_system\smart_intruder_dashboard
 │
 ├── index.html
 ├── script.js
@@ -170,7 +170,7 @@ git clone https://github.com/mehedi77k/Intruder_System.git
 Create and activate a virtual environment:
 
 ```bash
-cd C:\face_project
+cd C:\xampp\htdocs\smart_intruder_system\face_detect
 python -m venv .venv
 .venv\Scripts\activate
 ```
@@ -186,7 +186,7 @@ pip install opencv-python numpy mtcnn keras-facenet scikit-learn tensorflow requ
 Copy the backend API files into:
 
 ```text
-C:\xampp\htdocs\smart_intruder_api
+C:\xampp\htdocs\smart_intruder_system\php
 ```
 
 Start **Apache** and **MySQL** from the XAMPP Control Panel.
@@ -196,13 +196,13 @@ Start **Apache** and **MySQL** from the XAMPP Control Panel.
 Copy the dashboard files into:
 
 ```text
-C:\xampp\htdocs\smart_intruder_dashboard
+C:\xampp\htdocs\smart_intruder_system\smart_intruder_dashboard
 ```
 
 The dashboard will be available at:
 
 ```text
-http://localhost/smart_intruder_dashboard/
+http://localhost/smart_intruder_system/smart_intruder_dashboard
 ```
 
 ---
@@ -293,8 +293,8 @@ ESP32_STREAM_URL = "http://YOUR_ESP32_CAM_IP:81/stream"
 DATASET_PATH = r"C:\face_project\face_data"
 SIMILARITY_THRESHOLD = 0.6
 
-API_INSERT_URL = "http://localhost/smart_intruder_api/insert_data.php"
-API_HEARTBEAT_URL = "http://localhost/smart_intruder_api/update_heartbeat.php?device=python_processor"
+API_INSERT_URL = "http://localhost/C:/xampp/htdocs/smart_intruder_system/php/insert_data.php"
+API_HEARTBEAT_URL = "http://localhost/C:/xampp/htdocs/smart_intruder_system/php/update_heartbeat.php?device=python_processor"
 ```
 
 ### Dashboard API Path
@@ -302,7 +302,7 @@ API_HEARTBEAT_URL = "http://localhost/smart_intruder_api/update_heartbeat.php?de
 In `script.js`, confirm that the API base path matches your backend folder:
 
 ```javascript
-const API_BASE = "http://localhost/smart_intruder_api";
+const API_BASE = "http://localhost/C:/xampp/htdocs/smart_intruder_system/php";
 ```
 
 ---
@@ -351,7 +351,7 @@ Start both services:
 ### 2. Start the Python Processor
 
 ```bash
-cd C:\face_project
+cd C:/xampp/htdocs/smart_intruder_system/face_detect
 .venv\Scripts\activate
 python insert_counting.py
 ```
@@ -373,7 +373,7 @@ python main.py
 Open the following URL in a browser:
 
 ```text
-http://localhost/smart_intruder_dashboard/
+http://localhost/C:/xampp/htdocs/smart_intruder_system/smart_intruder_dashboard/
 ```
 
 ---
@@ -510,7 +510,7 @@ Check that:
 
 - Apache is running.
 - MySQL is running.
-- API files are inside `C:\xampp\htdocs\smart_intruder_api`.
+- API files are inside `C:\xampp\htdocs\smart_intruder_system\php`.
 - `db_connect.php` has the correct database credentials.
 - The API URL opens in a browser.
 
@@ -581,7 +581,7 @@ Although the core project is complete, the following improvements can be added i
 **Mehedi Hasan**
 
 - GitHub: [@mehedi77k](https://github.com/mehedi77k)
-- Repository: [Intruder_System](https://github.com/mehedi77k/Intruder_System)
+- Repository: [Intruder_System](https://github.com/mehedi77k/Smart_Intruder_System)
 
 ---
 
@@ -603,5 +603,5 @@ Camera Module: ESP32-CAM
 For issues, suggestions, or improvements, open an issue in the GitHub repository:
 
 ```text
-https://github.com/mehedi77k/Intruder_System/issues
+https://github.com/mehedi77k/Smart_Intruder_System/issues
 ```
